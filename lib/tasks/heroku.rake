@@ -14,7 +14,7 @@ namespace :heroku do
       ENV['KEEPALIVE_URL'].split(',').each do |url|
         puts "Keepalive #{url}"
         resp = HTTParty.get(url)
-        puts resp
+        puts resp.code
       end
     }
     Clockwork.run
